@@ -1,5 +1,5 @@
 class SoupsController < ApplicationController
-  before_action :fetch_soup, only: [:show, :edit, :update, :destroy, :toggle_featured]
+  before_action :fetch_soup, only: [:show, :toggle_featured]
 
   def index
     @soups = Soup.all
@@ -15,21 +15,9 @@ class SoupsController < ApplicationController
     end
   end
 
-  def new
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
-
   def toggle_featured
     @soup.toggle!(:featured)
-    flash[:notice] = "Successfully changed the featured flag."
+    flash[:notice] = 'Successfully changed the featured flag.'
     redirect_to @soup
   end
 
