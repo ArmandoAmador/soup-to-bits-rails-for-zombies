@@ -7,4 +7,6 @@
 </p>
 <% end %>
 
+<% if params[:admin] == "true" %>
 <p><%= link_to "Toggle Featured", toggle_featured_path(@soup) %> </p>
+<% end %>
